@@ -11,6 +11,7 @@ on:
           - dev
           - stg
           - prd
+        default: ""
 jobs:
   deploy:
     name: Deploy Terraform to ${{ inputs.env }}
