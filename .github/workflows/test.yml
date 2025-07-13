@@ -8,10 +8,10 @@ on:
         required: true
         type: choice
         options:
+          - "-- select --"
           - dev
           - stg
           - prd
-        default: " - "
         
 jobs:
   deploy:
@@ -19,6 +19,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Validate Inputs
+        run: |
+          if [ "${{ inputs.env }}" = "-- select --" ]; then
+            echo "❌ Invalid input: Please select valid values for 'env'."
+            exit 1
+          fi
+    
       - name: Checkout Code
         uses: actions/checkout@v4
 
