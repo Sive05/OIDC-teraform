@@ -2,17 +2,17 @@
 # name: Deploy Terraform
 
  on:
-#   workflow_dispatch:
-#     inputs:
-#       env:
-#         description: "Target environment (dev, stg, prd)"
-#         required: true
-#         type: choice
-#         options:
-#           - "-- select --"
-#           - dev
-#           - stg
-#           - prd
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Target environment (dev, stg, prd)"
+        required: true
+        type: choice
+        options:
+          - "-- select --"
+          - dev
+          - stg
+          - prd
         
 # jobs:
 #   deploy:
